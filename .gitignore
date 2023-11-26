@@ -3,3 +3,4 @@
 /segmentation_masks
 /segmentation_images
 /temp
+/__pycache__
