@@ -119,7 +119,7 @@ with c2:
 left, center, right = st.columns([0.45,0.1,0.45])
 
 with center:
-    button = st.button("PoP",on_click=change_button_state)
+    button = st.button("PoP",on_click=change_button_state,type='primary')
     
 if file is None:
     pass
