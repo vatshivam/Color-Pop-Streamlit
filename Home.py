@@ -2,7 +2,16 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Color Pop",
-    page_icon="random",
+    page_icon="random"
+)
+
+st.markdown(
+    """
+    <style>
+    .st-emotion-cache-mcjgwn {padding-top:5px; margin-top:5px;}
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 with st.sidebar:
@@ -11,8 +20,6 @@ with st.sidebar:
         st.subheader("Human segmentation application making color-pop effect easy to use!")
 
 st.write("# Welcome to Color Pop! :camera_with_flash:")
-
-
 
 st.markdown(
     """
