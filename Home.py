@@ -31,3 +31,9 @@ st.markdown(
     **Navigate through the project from the sidebar** to see how was it built and select "App" to try it! :carousel_horse:
 """
 )
+
+'''
+    [![Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/vatshivam/Color-Pop-Streamlit) [![Repo](https://badgen.net/static/About%20Me/Portfolio/f2a)](https://vatshivam.github.io)
+
+'''
+st.markdown("<br>",unsafe_allow_html=True)
