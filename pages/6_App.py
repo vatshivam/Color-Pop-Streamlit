@@ -70,11 +70,11 @@ def predict_modnet(image):
     # large_img = cv.cvtColor(large_img, cv.COLOR_BGR2RGB)
     return large_img
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
-@st.cache_resource(show_spinner=False)
-def load_segmentation_model():
-    model = tf.saved_model.load("./models/model 2023-11-27 06_03")
-    return model
+# st.set_option('deprecation.showfileUploaderEncoding', False)
+# @st.cache_resource(show_spinner=False)
+# def load_segmentation_model():
+#     model = tf.saved_model.load("./models/model 2023-11-27 06_03")
+#     return model
 
 def change_button_state():
     st.session_state.execute = True
@@ -103,8 +103,8 @@ with st.sidebar:
         st.title("Color Pop")
         st.subheader("Human segmentation application making color-pop effect easy to use!")
 
-with st.spinner('Model is being loaded..'):
-    model=load_segmentation_model()
+# with st.spinner('Model is being loaded..'):
+#     model=load_segmentation_model()
 
 st.write("""
          ### Get Color Pop effect on your favorite pictures!
@@ -133,10 +133,10 @@ else:
     
     output_image = None
     if st.session_state.execute:
-        if selected_model == "Shivam's":
-            output_image = predict_custom(model,opencv_image)
-        else:
-            output_image = predict_modnet(opencv_image)
+        # if selected_model == "Shivam's":
+        #     output_image = predict_custom(model,opencv_image)
+        # else:
+        output_image = predict_modnet(opencv_image)
         with right:
             st.image(output_image,use_column_width=True)
             output_image = cv.cvtColor(output_image, cv.COLOR_BGR2RGB)
