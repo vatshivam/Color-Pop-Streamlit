@@ -90,7 +90,7 @@ st.write("""
 c1,c2= st.columns(2)
 
 with c1:
-    st.image("./assets/size_image.jpg",caption="Before Resizing")
+    st.image("./assets/size_image.JPG",caption="Before Resizing")
 with c2:
     st.image("./assets/resized_image.jpg",caption= "After Resizing")
     
