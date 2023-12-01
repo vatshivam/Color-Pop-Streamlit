@@ -105,3 +105,5 @@ with c3:
     st.image("./assets/resized_mask.jpg",caption="Original Mask")
 with c4:
     st.image("./assets/resized_mask_thresholded.jpg",caption= "After Thresholding")
+    
+st.write("Code for preprocessing is in this [colab notebook](https://colab.research.google.com/drive/1VZK_x1aFUtJYNPbwB5ZSTx0kYO952WDQ?usp=sharing) :book:")

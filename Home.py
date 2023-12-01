@@ -28,6 +28,6 @@ st.markdown(
      
     This tool is built upon UNet trained on a small number of images. The final effect on images will like the image on the left 👈
     
-    **Navigate through the project from the sidebar to see how was it built**
+    **Navigate through the project from the sidebar** to see how was it built and select "App" to try it! :carousel_horse:
 """
 )
