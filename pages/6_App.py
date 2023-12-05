@@ -78,11 +78,11 @@ def predict_modnet(image):
 #     model = tf.saved_model.load("./models/model 2023-11-27 06_03")
 #     return model
 
-def change_button_state():
-    st.session_state.execute = True
+# def change_button_state():
+#     st.session_state.execute = True
 
-if 'execute' not in st.session_state:
-    st.session_state['execute'] = False
+# if 'execute' not in st.session_state:
+#     st.session_state['execute'] = False
 
 st.set_page_config(
     page_title="Color Pop",
@@ -118,10 +118,11 @@ with c1:
 with c2:
     selected_model = st.selectbox("Choose Model", ("MODNet", "Shivam's"),label_visibility='hidden',index=0)
 
-left, center, right = st.columns([0.45,0.1,0.45])
+# left, center, right = st.columns([0.45,0.1,0.45])
+left, right = st.columns(2)
 
-with center:
-    button = st.button("PoP",on_click=change_button_state,type='primary')
+# with center:
+#     button = st.button("PoP",on_click=change_button_state,type='primary')
     
 if file is None:
     pass
@@ -134,19 +135,19 @@ else:
         st.image(opencv_image, use_column_width=True)
     
     output_image = None
-    if st.session_state.execute:
+    # if st.session_state.execute:
         # if selected_model == "Shivam's":
         #     output_image = predict_custom(model,opencv_image)
         # else:
-        output_image = predict_modnet(opencv_image)
-        with right:
-            st.image(output_image,use_column_width=True)
-            output_image = cv.cvtColor(output_image, cv.COLOR_BGR2RGB)
-            is_success, im_buf_arr = cv.imencode(".jpg", output_image)
-            output = im_buf_arr.tobytes()
-            st.download_button("Download Image", output,file_name="pop.jpg")
-        st.snow()
-        st.session_state['execute'] = False
+    output_image = predict_modnet(opencv_image)
+    with right:
+        st.image(output_image,use_column_width=True)
+        output_image = cv.cvtColor(output_image, cv.COLOR_BGR2RGB)
+        is_success, im_buf_arr = cv.imencode(".jpg", output_image)
+        output = im_buf_arr.tobytes()
+        st.download_button("Download Image", output,file_name="pop.jpg")
+    st.snow()
+    # st.session_state['execute'] = False
         
 # @st.experimental_singleton
 # def init_tracking_object():
