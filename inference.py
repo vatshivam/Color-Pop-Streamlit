@@ -3,7 +3,7 @@ import sys
 import argparse
 import numpy as np
 from PIL import Image
-
+import gc
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -76,5 +76,8 @@ def get_mask(image, ckpt_path = None):
     # resize and save matte
     matte = F.interpolate(matte, size=(im_h, im_w), mode='area')
     matte = matte[0][0].data.cpu().numpy()
+
+    gc.collect()
+    
     return ((matte * 255).astype('uint8'))
                 
